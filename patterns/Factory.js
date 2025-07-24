@@ -34,3 +34,7 @@ class ShapeFactory {
 
 const box = ShapeFactory.create("BOX");
 box.draw()
+
+
+// Questions?
+// Think of passing width and height based on shape 
