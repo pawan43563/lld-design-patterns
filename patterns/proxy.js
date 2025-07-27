@@ -1,7 +1,14 @@
 // Build an image loader that logs requests before actually loading the image.
 
-class RealImage {
+class ImageLoader {
+    load() {
+        throw new Error('Method not implemented');
+    }
+}
+
+class RealImage extends ImageLoader {
     constructor(filename) {
+        super();
         this.filename = filename;
     }
 
@@ -10,20 +17,26 @@ class RealImage {
     }
 }
 
-class Proxy {
+class ImageProxy extends ImageLoader {
     constructor(filename) {
+        super();
         this.filename = filename;
         this.realImage = null;
     }
 
     load() {
-        console.log("image loading");
-        if(!this.realImage) this.realImage = new RealImage(this.filename);
+        console.log(`[Proxy] Intercepting request to load image: ${this.filename}`);
+        
+        if (!this.realImage) {
+            this.realImage = new RealImage(this.filename);
+        }
+        
         this.realImage.load();
     }
 }
 
-const filename = "image1"
 
-const image = new Proxy(filename);
-image.load()
+const filename = "image1.jpg";
+
+const image = new ImageProxy(filename);
+image.load();
