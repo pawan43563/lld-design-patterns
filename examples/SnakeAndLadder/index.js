@@ -137,7 +137,3 @@ rl.on("close", () => {
     const game = new Game(board, players, dice);
     game.start();
 });
-
-
-
-
