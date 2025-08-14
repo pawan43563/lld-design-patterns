@@ -138,6 +138,9 @@ A complete implementation of the classic Snake and Ladder board game that demons
 [View Question](./examples/SnakeAndLadder/question.txt)
 [View Implementation](./examples/SnakeAndLadder/index.js)
 
+## Deep Dive Resources
+This repository covers the fundamental concepts of design patterns. For a more comprehensive and in-depth understanding, check out:
+https://refactoring.guru/design-patterns
 
 ## Contributing
 
